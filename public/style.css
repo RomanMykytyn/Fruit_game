@@ -1,0 +1,23 @@
+body {
+  background-color: #714119;
+}
+
+#root {
+  padding: 28px 10px 10px 30px;
+  width: 990px;
+  height: 550px;
+  border: 1px solid red;
+  margin: 0 auto 0 auto;
+  background-image: url(images/shelf.jpg);
+  display: grid;
+  grid-template-rows: 110px 110px 110px 110px;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 30px;
+}
+
+#root > div {
+  font-size: 8px;
+  
+  text-align: center;
+  border: 1px solid green;
+}
