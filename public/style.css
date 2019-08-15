@@ -1,5 +1,6 @@
 body {
   background-color: #714119;
+  /*background: radial-gradient(#cda46e, #714119);*/
 }
 
 #root {
@@ -17,7 +18,8 @@ body {
 
 #root > div {
   font-size: 8px;
-  
+
   text-align: center;
   border: 1px solid green;
+  background-image: url(images/boxFrame.png);
 }
