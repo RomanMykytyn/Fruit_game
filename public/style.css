@@ -10,16 +10,31 @@ body {
   border: 1px solid red;
   margin: 0 auto 0 auto;
   background-image: url(images/shelf.jpg);
+}
+
+.boxContainer {
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-rows: 110px 110px 110px 110px;
   grid-template-columns: 300px 300px 300px;
   grid-gap: 30px;
 }
 
-#root > div {
+.box {
   font-size: 8px;
-
   text-align: center;
   border: 1px solid green;
   background-image: url(images/boxFrame.png);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fruit {
+  border: 1px solid red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
