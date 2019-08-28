@@ -6,9 +6,11 @@ class Box extends Component {
     var isHidden = this.props.boxData.busy ? 'box' : 'boxHidden';
     return (
       <div className={isHidden}>
-        {this.props.boxData.fruits.map(el =>
-          <Fruit fruitData={el} key={el.id} />
-        )}
+        {isHidden === 'box' &&
+          this.props.boxData.fruits.map(el =>
+            <Fruit fruitData={el} key={el.id} />
+          )
+        }
       </div>
     );
   }

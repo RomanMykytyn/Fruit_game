@@ -8,14 +8,14 @@ export default function createGameData() {
   var gameData = [];
   var temp = [];
   for (let i = 0; i < quantityBoxPlaces * quantityFruitInBox; i++) {
-    listFruits[i] ? temp.push({'busy' : true, 'id' : i, 'x' : 0, 'y' : 0, 'type' : listFruits[i]})
-                  : temp.push({'busy' : false, 'id' : i, 'x' : 0, 'y' : 0, 'type' : ''});
+    listFruits[i] ? temp.push({'busy' : true, 'id' : 'fruitId_' + i, 'type' : listFruits[i]})
+                  : temp.push({'busy' : false, 'id' : 'fruitId_' +  i, 'type' : ''});
     if (temp.length >= quantityFruitInBox && i <= quantityFruitInBox * quantityBox) {
-      gameData.push(({'busy' : true, 'id' : (i-2)/3, 'x' : 0, 'y' : 0, 'fruits' : temp}));
+      gameData.push(({'busy' : true, 'id' : (i-2)/3, 'fruits' : temp}));
       temp = [];
     }
     if (temp.length >= quantityFruitInBox && i > quantityFruitInBox * quantityBox) {
-      gameData.push(({'busy' : false, 'id' : (i-2)/3, 'x' : 0, 'y' : 0, 'fruits' : temp}));
+      gameData.push(({'busy' : false, 'id' : (i-2)/3, 'fruits' : temp}));
       temp = [];
     }
   }

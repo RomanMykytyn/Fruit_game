@@ -33,8 +33,19 @@ body {
 
 .fruit {
   border: 1px solid red;
-
+  width: 90px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+img {
+  border: 1px solid green;
+}
+
+.fruitHidden {
+  border: 1px solid yellow;
+  width: 90px;
+  height: 90px;
 }
