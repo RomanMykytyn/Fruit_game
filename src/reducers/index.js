@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 
-function itemsHasErrored(state = {}, action) {
+function gameData(state = [], action) {
     switch (action.type) {
-        case 'ITEMS_HAS_ERRORED':
-            return action.hasErrored;
+        case 'GAME_UPDATE':
+            return action.gameData;
 
         default:
             return state;
@@ -12,5 +12,5 @@ function itemsHasErrored(state = {}, action) {
 }
 
 export default combineReducers({
-    gameData: itemsHasErrored,
+    gameData: gameData
 });

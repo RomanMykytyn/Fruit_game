@@ -23,12 +23,27 @@ body {
 
 .box {
   font-size: 8px;
+  height: 108px;
+  width: 300px;
   text-align: center;
   border: 1px solid green;
   background-image: url(images/boxFrame.png);
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.boxHidden {
+  height: 108px;
+  width: 300px;
+  border: 1px solid white;
+}
+
+.boxPlace {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0;
+  /*border: 1px solid black;*/
 }
 
 .fruit {
