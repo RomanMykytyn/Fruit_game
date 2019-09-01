@@ -40,7 +40,7 @@ export function moveBox(e, data) {
     elem.onmouseup = function(e) {
       document.onmousemove = null;
       elem.onmouseup = null;
-      elem.style.position = 'static';
+      elem.style = null;
       console.log(targets);
       for(let i=0;i<targets.length;i++){
         var bounds = targets[i].getBoundingClientRect();
@@ -65,7 +65,6 @@ export function moveBox(e, data) {
         if (data[i].id == oldPos) {
           data[i].busy = false;
           var fruitsInBox = data[i].fruits;
-
         }
       }
       for (let i = 0; i < data.length; i++) {

@@ -64,3 +64,17 @@ img {
   width: 90px;
   height: 90px;
 }
+
+.glow {
+  animation: glowing  2s infinite ease-in-out;
+  box-shadow: 0 0 10px 10px rgba(250,150,150,1);
+}
+
+@@keyframes glowing {
+  from {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(50,0,0,0.7);
+  }
+}

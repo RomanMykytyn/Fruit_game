@@ -9,10 +9,12 @@ class Fruit extends Component {
     }
 
   handlerMoveFruit(e) {
+    console.log('xxx');
     this.props.moveFruit(e, this.props.gameData);
   }
 
   handlerMoveBox(e) {
+    console.log('yyy');
     this.props.moveBox(e, this.props.gameData);
   }
 
@@ -20,8 +22,7 @@ class Fruit extends Component {
     var isHidden = this.props.fruitData.busy ? 'fruit' : 'fruitHidden';
     return (
         <div className={isHidden}
-             idplace={this.props.fruitData.id}
-             onMouseDown={this.handlerMoveBox}>
+             idplace={this.props.fruitData.id}>
           {isHidden === 'fruit' &&
             <img src={'images/' + this.props.fruitData.type + '.png'}
                  id={this.props.fruitData.id}
