@@ -1,3 +1,6 @@
+import {gameOver} from '../utils/gameOver';
+import createGameData from '../utils/createGameData';
+
 function gameData(data) {
     var copyData = [...data]
     return {
@@ -19,6 +22,10 @@ export function moveBox(e, data) {
     elem.ondragstart = function() {
       return false;
     };
+
+    for(let i=0;i<targets.length;i++) {
+      targets[i].classList.add("glow");
+    }
 
     function getCoords(elem) {
       var box = elem.getBoundingClientRect();
@@ -42,6 +49,9 @@ export function moveBox(e, data) {
       elem.onmouseup = null;
       elem.style = null;
       console.log(targets);
+      for(let i=0;i<targets.length;i++) {
+        targets[i].classList.remove("glow");
+      }
       for(let i=0;i<targets.length;i++){
         var bounds = targets[i].getBoundingClientRect();
         //console.log(bounds);
@@ -72,6 +82,12 @@ export function moveBox(e, data) {
           data[i].busy = true;
           data[i].fruits = fruitsInBox;
         }
+      }
+      if (gameOver(data)) {
+        data = createGameData();
+        console.log(data);
+        alert('OK');
+        return data.gameData;
       }
       return data;
     }

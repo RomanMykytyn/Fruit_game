@@ -26,10 +26,10 @@ body {
   height: 108px;
   width: 300px;
   text-align: center;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   background-image: url(images/boxFrame.png);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -48,8 +48,8 @@ body {
 
 .fruit {
   border: 1px solid red;
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 106px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,20 +61,20 @@ img {
 
 .fruitHidden {
   border: 1px solid yellow;
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 106px;
 }
 
 .glow {
-  animation: glowing  2s infinite ease-in-out;
-  box-shadow: 0 0 10px 10px rgba(250,150,150,1);
+  animation: glowing  0.5s infinite alternate;
+
 }
 
-@@keyframes glowing {
+@keyframes glowing {
   from {
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 5px rgba(255,225,0,0.5);
   }
   to {
-    box-shadow: 0 0 10px rgba(50,0,0,0.7);
+    box-shadow: 0 0 7px 7px rgba(255,225,0,1);
   }
 }

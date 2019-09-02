@@ -19,6 +19,10 @@ export function moveFruit(e, data) {
     return false;
   };
 
+  for(let i=0;i<targets.length;i++) {
+    targets[i].classList.add("glow");
+  }
+
   function getCoords(elem) {
     var box = elem.getBoundingClientRect();
     return {
@@ -39,6 +43,9 @@ export function moveFruit(e, data) {
   elem.onmouseup = function(e) {
     document.onmousemove = null;
     elem.onmouseup = null;
+    for(let i=0;i<targets.length;i++) {
+      targets[i].classList.remove("glow");
+    }
     for(let i=0;i<targets.length;i++){
       var bounds = targets[i].getBoundingClientRect();
       console.log(bounds);
