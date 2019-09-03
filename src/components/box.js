@@ -5,14 +5,18 @@ class Box extends Component {
 
   constructor(props) {
         super(props);
-        this.handlerMoveBox = this.handlerMoveBox.bind(this);
+        this.handlerMoveElement = this.handlerMoveElement.bind(this);
     }
 
 
-  handlerMoveBox(e) {
-    if (e.target.id.includes('fruitId'))
-      return
-    this.props.moveBox(e, this.props.gameData);
+  handlerMoveElement(e) {
+    if (e.target.id.includes('fruitId')) return;
+    const elem = e.target.parentNode;
+    if (elem.className === 'boxPlace') return;
+    const targets = document.getElementsByClassName('boxHidden');
+    const pageX = e.pageX;
+    const pageY = e.pageY;
+    this.props.moveElement(elem, targets, pageX, pageY, this.props.gameData);
   }
 
   render () {
@@ -21,13 +25,12 @@ class Box extends Component {
       <div className='boxPlace'>
         <div className={isHidden}
              id={this.props.boxData.id}
-             onMouseDown={this.handlerMoveBox}>
+             onMouseDown={this.handlerMoveElement}>
           {isHidden === 'box' &&
             this.props.boxData.fruits.map(el =>
               <Fruit fruitData={el}
                      key={el.id}
-                     moveFruit={this.props.moveFruit}
-                     moveBox={this.props.moveBox}
+                     moveElement={this.props.moveElement}
                      gameData={this.props.gameData}
                />
             )

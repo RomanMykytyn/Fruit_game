@@ -15,7 +15,6 @@ export function gameOver(data) {
         }
       }
     }
-    console.log(result);
     if ( !resultIsGood(result) ) {
       error++;
     }

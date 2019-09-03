@@ -4,18 +4,16 @@ class Fruit extends Component {
 
   constructor(props) {
         super(props);
-        this.handlerMoveFruit = this.handlerMoveFruit.bind(this);
-        this.handlerMoveBox = this.handlerMoveBox.bind(this);
+        this.handlerMoveElement = this.handlerMoveElement.bind(this);
     }
 
-  handlerMoveFruit(e) {
-    console.log('xxx');
-    this.props.moveFruit(e, this.props.gameData);
-  }
 
-  handlerMoveBox(e) {
-    console.log('yyy');
-    this.props.moveBox(e, this.props.gameData);
+  handlerMoveElement(e) {
+    const elem = document.getElementById(e.target.id);
+    const targets = document.getElementsByClassName('fruitHidden');
+    const pageX = e.pageX;
+    const pageY = e.pageY;
+    this.props.moveElement(elem, targets, pageX, pageY, this.props.gameData);
   }
 
   render () {
@@ -27,7 +25,7 @@ class Fruit extends Component {
             <img src={'images/' + this.props.fruitData.type + '.png'}
                  id={this.props.fruitData.id}
                  type={this.props.fruitData.type}
-                 onMouseDown={this.handlerMoveFruit}/>
+                 onMouseDown={this.handlerMoveElement}/>
           }
         </div>
     );

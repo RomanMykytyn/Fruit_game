@@ -2,30 +2,18 @@
 import { connect } from 'react-redux';
 import Box from './box';
 import React from 'react';
-import { moveFruit } from '../actions/moveFruit';
-import { moveBox } from '../actions/moveBox';
+import { moveElement } from '../actions/moveElement';
 
 
 class App extends React.Component {
 
-  constructor(props) {
-        super(props);
-
-    }
-
-  shouldComponentUpdate() {
-    return true;
-  }
-
   render () {
-    console.log(this.props.gameData);
     return (
       <div className='boxContainer'>
         {this.props.gameData.map(el =>
           <Box boxData={el}
                key={el.id}
-               moveFruit={this.props.moveFruit}
-               moveBox={this.props.moveBox}
+               moveElement={this.props.moveElement}
                gameData={this.props.gameData}
            />
         )}
@@ -42,8 +30,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      moveFruit: (e, data) => dispatch(moveFruit(e, data)),
-      moveBox: (e, data) => dispatch(moveBox(e, data))
+      moveElement: (elem, targets, pageX, pageY, data) => dispatch(moveElement(elem, targets, pageX, pageY, data))
     };
 };
 
